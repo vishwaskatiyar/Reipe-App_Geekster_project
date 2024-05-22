@@ -27,10 +27,10 @@ const Navbar = () => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/recipes">Explore</a>
+            <a href="/">Explore</a>
           </li>
           <li>
-            <a href="/favorites"> Favorite</a>
+            <a href="/"> Favorite</a>
           </li>
         </ul>
         <Button

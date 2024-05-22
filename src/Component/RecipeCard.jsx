@@ -1,8 +1,12 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const RecipeCard = ({ recipe }) => {
-  const { image, label, cuisineType, mealType, uri } = recipe?.recipe;
+  if (!recipe || !recipe.recipe) {
+    return null; // or return a default component
+  }
+
+  const { image, label, cuisineType, mealType, uri } = recipe.recipe;
   const id = uri?.split("#")[1];
 
   return (
@@ -33,6 +37,12 @@ const RecipeCard = ({ recipe }) => {
       </div>
     </Link>
   );
+};
+
+RecipeCard.propTypes = {
+  recipe: PropTypes.shape({
+    recipe: PropTypes.object.isRequired,
+  }).isRequired,
 };
 
 export default RecipeCard;
